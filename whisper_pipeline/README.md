@@ -55,5 +55,5 @@ python all_videos_ffmpeg_extract_audios_multithread.py --video_folder /data/yinz
 ```
 cd ~/workspace/transcriptions/whisper_pipeline
 conda activate torch
-python whisper_transcribe_on_all_videos.py --mp3_folder "/data/yinzi/babyview/transcripts_distil_large_v3/Babyview_Main" --transcript_output_folder "/data/yinzi/babyview/transcripts_distil-large-v3/Babyview_Main" --device_ids "[0,1,2,3]"
+python whisper_transcribe_on_all_videos_parallel.py --mp3_folder "/data/yinzi/babyview/transcripts_distil_large_v3/Babyview_Main" --transcript_output_folder "/data/yinzi/babyview/transcripts_distil-large-v3/Babyview_Main" --device_ids "[0,1,2,3]"
 ```
