@@ -1,12 +1,14 @@
-import torch
-from glob import glob
-import pandas as pd
 import os
+from glob import glob
 import re
+
+import pandas as pd
+import json
 import argparse
 from tqdm import tqdm
+
+import torch
 import stable_whisper
-import json
 import logging
 logging.getLogger().setLevel(logging.ERROR)
 
@@ -18,6 +20,7 @@ def main():
     parser.add_argument("--rank_id", type=int, default=0, help="Rank ID for distributed running.")
     parser.add_argument("--num_parallel", type=int, default=1, help="Number of parallel processes.")
     parser.add_argument("--is_saycam", type=int, default=0, help="Whether the videos are from SayCam.")
+    parser.add_argument("--overwrite", type=bool, default=False, help="Whether to overwrite existing files.", action='store_true')
     args = parser.parse_args()
     mp3_folder = args.mp3_folder
     is_saycam = args.is_saycam
@@ -25,8 +28,9 @@ def main():
     device = torch.device("cuda")
     rank_id = args.rank_id
     num_parallel = args.num_parallel
-    model = stable_whisper.load_model('large-v3', device=device)
-    model.use_flash_attention_2 = False
+    overwrite = args.overwrite
+    # model = stable_whisper.load_hf_whisper("turbo", device=device)
+    model = stable_whisper.load_model("large-v3", device=device)
 
     english_subjects = []
     filter_english_subjects = False
@@ -74,17 +78,19 @@ def main():
         file_name = os.path.basename(audio_file)
         file_name = re.sub(r"\.mp3$", "", file_name)
         subject_id = file_name_subject_id[file_name]
-        result = model.transcribe(audio_file, language='en', suppress_silence=True)
+
+        json_output_path = os.path.join(transcript_output_folder, "json", subject_id, f"{file_name}.json")
+
+        if not overwrite and os.path.exists(json_output_path):
+            continue
+
+        with torch.no_grad():
+            result = model.transcribe(audio_file, language='en', word_timestamps=True, suppress_silence=True)
         result_dict = result.to_dict()
-        segments_with_words = result_dict['ori_dict']['segments']
-        # Save result to csv
-        output_path = os.path.join(transcript_output_folder, subject_id, f"{file_name}.json")
-        if is_saycam:
-            output_path = os.path.join(transcript_output_folder, f"{file_name}.json")
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
-        with open(output_path, "w") as json_file:
-            json.dump(segments_with_words, json_file, indent=4)
+        
+        os.makedirs(os.path.dirname(json_output_path), exist_ok=True)
+        with open(json_output_path, "w") as f:
+            json.dump(result_dict['ori_dict']['segments'], f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
     main()
-

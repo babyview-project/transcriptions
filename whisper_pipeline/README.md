@@ -17,9 +17,11 @@ pip install numpy pandas tqdm opencv-python pillow
 pip install matplotlib
 pip install nvidia-pyindex 
 pip install --upgrade transformers accelerate
+pip install stable-ts
 ```
 
 ## [Optional] Install flash-attn to accelerate the inference of transformers
+(Note: Alvin did not manage to make this work)
 ```
 conda install nvidia/label/cuda-12.1.0::cuda
 export CUDA_HOME=$(python -c "import os; print(os.path.dirname(os.path.dirname(os.path.dirname(os.__file__))))")
