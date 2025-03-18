@@ -1,15 +1,13 @@
-import os
+import torch
 from glob import glob
-import re
-
 import pandas as pd
-import json
+import os
+import re
 import argparse
 from tqdm import tqdm
-
-import torch
 import stable_whisper
 import logging
+import json
 logging.getLogger().setLevel(logging.ERROR)
 
 def main():
@@ -20,7 +18,7 @@ def main():
     parser.add_argument("--rank_id", type=int, default=0, help="Rank ID for distributed running.")
     parser.add_argument("--num_parallel", type=int, default=1, help="Number of parallel processes.")
     parser.add_argument("--is_saycam", type=int, default=0, help="Whether the videos are from SayCam.")
-    parser.add_argument("--overwrite", type=bool, default=False, help="Whether to overwrite existing files.", action='store_true')
+    parser.add_argument("--overwrite", action='store_true', help="Whether to overwrite existing files.")
     args = parser.parse_args()
     mp3_folder = args.mp3_folder
     is_saycam = args.is_saycam
@@ -49,23 +47,24 @@ def main():
     for audio_file in all_audio_files:
         file_name = os.path.basename(audio_file)
         file_name = re.sub(r"\.mp3$", "", file_name)
-        try:
-            # fix it because the partten is different for luna vidoes
-            partten = re.findall(r'(.*)_GX', file_name)
-            if len(partten) == 0: # new name partten
-                partten = re.findall(r'(.*)_H', file_name)
-            if len(partten) == 0:  # fallback partten
-                partten = file_name.split("_")
-            subject_id = partten[0]
-        except:
-            print(f"[WARNING]: Could not extract subject ID from {file_name}, skip")
-            raise RuntimeError
+        subject_id = file_name.split("_")[0]
         file_name_subject_id[file_name] = subject_id
         if subject_id in english_subjects and filter_english_subjects:
             en_audio_files.append(audio_file)
     
     if filter_english_subjects:
         all_audio_files = en_audio_files
+
+    if not overwrite:
+        new_audio_files = []
+        for audio_file in all_audio_files:
+            file_name = os.path.basename(audio_file)
+            file_name = re.sub(r"\.mp3$", "", file_name)
+            subject_id = file_name.split("_")[0]
+            json_output_path = os.path.join(transcript_output_folder, "json", subject_id, f"{file_name}.json")
+            if not os.path.exists(json_output_path):
+                new_audio_files.append(audio_file)
+        all_audio_files = new_audio_files
 
     group_size = len(all_audio_files) // num_parallel
     start_idx = rank_id * group_size
@@ -80,9 +79,6 @@ def main():
         subject_id = file_name_subject_id[file_name]
 
         json_output_path = os.path.join(transcript_output_folder, "json", subject_id, f"{file_name}.json")
-
-        if not overwrite and os.path.exists(json_output_path):
-            continue
 
         with torch.no_grad():
             result = model.transcribe(audio_file, language='en', word_timestamps=True, suppress_silence=True)
