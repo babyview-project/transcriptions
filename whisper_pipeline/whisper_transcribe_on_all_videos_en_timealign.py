@@ -6,6 +6,7 @@ import re
 import argparse
 from tqdm import tqdm
 import stable_whisper
+import json
 import logging
 logging.getLogger().setLevel(logging.ERROR)
 
@@ -25,6 +26,7 @@ def main():
     rank_id = args.rank_id
     num_parallel = args.num_parallel
     model = stable_whisper.load_model('large-v3', device=device)
+    model.use_flash_attention_2 = False
 
     english_subjects = []
     filter_english_subjects = False
@@ -74,22 +76,14 @@ def main():
         subject_id = file_name_subject_id[file_name]
         result = model.transcribe(audio_file, language='en', suppress_silence=True)
         result_dict = result.to_dict()
-        data = []
-        for chunk in result_dict['segments']:
-            start_time = chunk['start']
-            end_time = chunk['end']
-            data.append({
-                'start_time': start_time,
-                'end_time': end_time,
-                'text': chunk['text']
-            })
+        segments_with_words = result_dict['ori_dict']['segments']
         # Save result to csv
-        res_df = pd.DataFrame(data)
-        output_path = os.path.join(transcript_output_folder, subject_id, f"{file_name}.csv")
+        output_path = os.path.join(transcript_output_folder, subject_id, f"{file_name}.json")
         if is_saycam:
-            output_path = os.path.join(transcript_output_folder, f"{file_name}.csv")
+            output_path = os.path.join(transcript_output_folder, f"{file_name}.json")
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
-        res_df.to_csv(output_path, index_label="utterance_no")
+        with open(output_path, "w") as json_file:
+            json.dump(segments_with_words, json_file, indent=4)
 
 if __name__ == "__main__":
     main()

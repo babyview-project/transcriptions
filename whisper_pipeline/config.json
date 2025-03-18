@@ -1,8 +1,6 @@
 {
     "transcripts_folder": "",
-    "frames_folder": "",
     "videos_folder": "",
-    "save_folder": "",
-    "frame_batch_size": 512,
-    "prefetch": 100
+    "mp3_folder": "",
+    "save_folder": ""
 }

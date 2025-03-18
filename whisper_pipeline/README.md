@@ -26,7 +26,7 @@ export CUDA_HOME=$(python -c "import os; print(os.path.dirname(os.path.dirname(o
 pip install flash-attn --no-build-isolation
 ```
 
-## Run distil-whisper/distil-large-v3 to get transcripts
+## Run distil-whisper/distil-large-v3 or stable-whisper/large-v3 to get transcripts
 
 ### Demo: Single video
 
@@ -44,16 +44,9 @@ python3 whisper_transcribe_single_video.py --input_audio [audio_full_path] --out
 ```
 
 ### Demo: All videos
-#### Step1: Extract the audio from all the videos
+#### Extract the audio from all of the videos and the stable-whisper/large-v3 model to get the word-level transcripts
 ```
 cd ~/workspace/transcriptions/whisper_pipeline
 conda activate torch
-python all_videos_ffmpeg_extract_audios_multithread.py --video_folder /data/yinzi/babyview/Babyview_Main/ --mp3_folder /data/yinzi/babyview/transcripts_distil_large_v3/Babyview_Main --max_workers 8
-```
-
-#### Step2: Run the distil-whisper/distil-large-v3 model to get the transcript
-```
-cd ~/workspace/transcriptions/whisper_pipeline
-conda activate torch
-python whisper_transcribe_on_all_videos_parallel.py --mp3_folder "/data/yinzi/babyview/transcripts_distil_large_v3/Babyview_Main" --transcript_output_folder "/data/yinzi/babyview/transcripts_distil-large-v3/Babyview_Main" --device_ids "[0,1,2,3]"
+python run_whisper.py
 ```
