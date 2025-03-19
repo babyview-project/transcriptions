@@ -81,7 +81,7 @@ def main():
         json_output_path = os.path.join(transcript_output_folder, "json", subject_id, f"{file_name}.json")
 
         with torch.no_grad():
-            result = model.transcribe(audio_file, language='en', word_timestamps=True, suppress_silence=True)
+            result = model.transcribe(audio_file, word_timestamps=True, suppress_silence=True)
         result_dict = result.to_dict()
         
         os.makedirs(os.path.dirname(json_output_path), exist_ok=True)
