@@ -1,6 +1,5 @@
 {
-    "transcripts_folder": "",
-    "videos_folder": "",
-    "mp3_folder": "",
-    "save_folder": ""
+    "transcripts_folder": "/ccn2/dataset/babyview/outputs_20250312/transcripts",
+    "videos_folder": "/ccn2/dataset/babyview/unzip_2025",
+    "mp3_folder": "/ccn2/dataset/babyview/outputs_20250312/mp3"
 }

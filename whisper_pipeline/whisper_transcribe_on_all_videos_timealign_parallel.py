@@ -47,7 +47,7 @@ def main():
     for rank_id in all_rank_ids:
         device_id = rank_device_dict[rank_id]
         command = (
-            f"source ~/miniconda3/bin/activate;conda activate clipalignment;export CUDA_VISIBLE_DEVICES={device_id};"
+            f"conda activate whisper;export CUDA_VISIBLE_DEVICES={device_id};"
             f"python3 whisper_transcribe_on_all_videos_en_timealign.py --mp3_folder {mp3_folder} "
             f"--transcript_output_folder {transcript_output_folder} "
             f"--rank_id {rank_id} --num_parallel {num_parallel} --is_saycam {is_saycam}"

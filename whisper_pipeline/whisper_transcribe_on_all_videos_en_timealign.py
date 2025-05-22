@@ -19,11 +19,12 @@ def main():
     parser.add_argument("--num_parallel", type=int, default=1, help="Number of parallel processes.")
     parser.add_argument("--is_saycam", type=int, default=0, help="Whether the videos are from SayCam.")
     parser.add_argument("--overwrite", action='store_true', help="Whether to overwrite existing files.")
+    parser.add_argument("--device", default="cuda", type=str, help="Device to use")
     args = parser.parse_args()
     mp3_folder = args.mp3_folder
     is_saycam = args.is_saycam
     transcript_output_folder = args.transcript_output_folder
-    device = torch.device("cuda")
+    device = torch.device(args.device)
     rank_id = args.rank_id
     num_parallel = args.num_parallel
     overwrite = args.overwrite

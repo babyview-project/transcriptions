@@ -1,0 +1,35 @@
+token_id,utterance_id,utterance,token_num,token,token_start_time,token_end_time
+0,0,"Oh, maybe you want to see the bear's birthday book.",0,oh,1.86,2.14
+1,0,"Oh, maybe you want to see the bear's birthday book.",1,maybe,2.56,2.92
+2,0,"Oh, maybe you want to see the bear's birthday book.",2,you,2.92,3.16
+3,0,"Oh, maybe you want to see the bear's birthday book.",3,want,3.16,3.38
+4,0,"Oh, maybe you want to see the bear's birthday book.",4,to,3.38,3.48
+5,0,"Oh, maybe you want to see the bear's birthday book.",5,see,3.48,3.66
+6,0,"Oh, maybe you want to see the bear's birthday book.",6,the,3.8,3.9
+7,0,"Oh, maybe you want to see the bear's birthday book.",7,bear's,3.9,4.46
+8,0,"Oh, maybe you want to see the bear's birthday book.",8,birthday,4.46,4.74
+9,0,"Oh, maybe you want to see the bear's birthday book.",9,book,4.74,5.22
+10,1,Are you gonna read about the big hungry bear?,0,are,6.2,8.84
+11,1,Are you gonna read about the big hungry bear?,1,you,8.9,9.0
+12,1,Are you gonna read about the big hungry bear?,2,gonna,9.0,9.18
+13,1,Are you gonna read about the big hungry bear?,3,read,9.18,9.4
+14,1,Are you gonna read about the big hungry bear?,4,about,9.4,9.54
+15,1,Are you gonna read about the big hungry bear?,5,the,9.54,9.66
+16,1,Are you gonna read about the big hungry bear?,6,big,9.66,9.88
+17,1,Are you gonna read about the big hungry bear?,7,hungry,9.88,10.1
+18,1,Are you gonna read about the big hungry bear?,8,bear,10.1,10.48
+19,2,Yeah.,0,yeah,10.9,11.28
+20,3,And the fresh strawberry?,0,and,11.64,11.76
+21,3,And the fresh strawberry?,1,the,11.76,11.84
+22,3,And the fresh strawberry?,2,fresh,11.84,12.12
+23,3,And the fresh strawberry?,3,strawberry,12.12,12.54
+24,4,"Okay, maybe Emil can see the bear's birthday book now.",0,okay,13.26,14.12
+25,4,"Okay, maybe Emil can see the bear's birthday book now.",1,maybe,14.44,14.6
+26,4,"Okay, maybe Emil can see the bear's birthday book now.",2,emil,14.6,14.86
+27,4,"Okay, maybe Emil can see the bear's birthday book now.",3,can,14.86,15.06
+28,4,"Okay, maybe Emil can see the bear's birthday book now.",4,see,15.06,15.32
+29,4,"Okay, maybe Emil can see the bear's birthday book now.",5,the,15.32,15.42
+30,4,"Okay, maybe Emil can see the bear's birthday book now.",6,bear's,15.42,15.68
+31,4,"Okay, maybe Emil can see the bear's birthday book now.",7,birthday,15.68,15.9
+32,4,"Okay, maybe Emil can see the bear's birthday book now.",8,book,15.9,16.18
+33,4,"Okay, maybe Emil can see the bear's birthday book now.",9,now,16.18,16.3

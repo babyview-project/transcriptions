@@ -1,0 +1,435 @@
+[
+    {
+        "id": 0,
+        "start": 1.86,
+        "end": 5.22,
+        "text": " Oh, maybe you want to see the bear's birthday book.",
+        "seek": 0.0,
+        "tokens": [
+            876,
+            11,
+            1310,
+            291,
+            528,
+            281,
+            536,
+            264,
+            6155,
+            311,
+            6154,
+            1446,
+            13
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.40120403854935255,
+        "compression_ratio": 1.472,
+        "no_speech_prob": 0.02233218215405941,
+        "words": [
+            {
+                "word": " Oh,",
+                "start": 1.86,
+                "end": 2.14,
+                "probability": 0.02266932837665081,
+                "tokens": [
+                    876,
+                    11
+                ]
+            },
+            {
+                "word": " maybe",
+                "start": 2.56,
+                "end": 2.92,
+                "probability": 0.9811637997627258,
+                "tokens": [
+                    1310
+                ]
+            },
+            {
+                "word": " you",
+                "start": 2.92,
+                "end": 3.16,
+                "probability": 0.8282009959220886,
+                "tokens": [
+                    291
+                ]
+            },
+            {
+                "word": " want",
+                "start": 3.16,
+                "end": 3.38,
+                "probability": 0.5833200812339783,
+                "tokens": [
+                    528
+                ]
+            },
+            {
+                "word": " to",
+                "start": 3.38,
+                "end": 3.48,
+                "probability": 0.9923926591873169,
+                "tokens": [
+                    281
+                ]
+            },
+            {
+                "word": " see",
+                "start": 3.48,
+                "end": 3.66,
+                "probability": 0.933962881565094,
+                "tokens": [
+                    536
+                ]
+            },
+            {
+                "word": " the",
+                "start": 3.8,
+                "end": 3.9,
+                "probability": 0.8962608575820923,
+                "tokens": [
+                    264
+                ]
+            },
+            {
+                "word": " bear's",
+                "start": 3.9,
+                "end": 4.46,
+                "probability": 0.8120618462562561,
+                "tokens": [
+                    6155,
+                    311
+                ]
+            },
+            {
+                "word": " birthday",
+                "start": 4.46,
+                "end": 4.74,
+                "probability": 0.9849621057510376,
+                "tokens": [
+                    6154
+                ]
+            },
+            {
+                "word": " book.",
+                "start": 4.74,
+                "end": 5.22,
+                "probability": 0.9428302645683289,
+                "tokens": [
+                    1446,
+                    13
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "start": 6.2,
+        "end": 10.48,
+        "text": " Are you gonna read about the big hungry bear?",
+        "seek": 0.0,
+        "tokens": [
+            2014,
+            291,
+            799,
+            1401,
+            466,
+            264,
+            955,
+            8067,
+            6155,
+            30
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.40120403854935255,
+        "compression_ratio": 1.472,
+        "no_speech_prob": 0.02233218215405941,
+        "words": [
+            {
+                "word": " Are",
+                "start": 6.2,
+                "end": 8.84,
+                "probability": 0.7503276467323303,
+                "tokens": [
+                    2014
+                ]
+            },
+            {
+                "word": " you",
+                "start": 8.9,
+                "end": 9.0,
+                "probability": 0.9959858059883118,
+                "tokens": [
+                    291
+                ]
+            },
+            {
+                "word": " gonna",
+                "start": 9.0,
+                "end": 9.18,
+                "probability": 0.40075019001960754,
+                "tokens": [
+                    799
+                ]
+            },
+            {
+                "word": " read",
+                "start": 9.18,
+                "end": 9.4,
+                "probability": 0.9956331849098206,
+                "tokens": [
+                    1401
+                ]
+            },
+            {
+                "word": " about",
+                "start": 9.4,
+                "end": 9.54,
+                "probability": 0.996231734752655,
+                "tokens": [
+                    466
+                ]
+            },
+            {
+                "word": " the",
+                "start": 9.54,
+                "end": 9.66,
+                "probability": 0.9666584730148315,
+                "tokens": [
+                    264
+                ]
+            },
+            {
+                "word": " big",
+                "start": 9.66,
+                "end": 9.88,
+                "probability": 0.8789681196212769,
+                "tokens": [
+                    955
+                ]
+            },
+            {
+                "word": " hungry",
+                "start": 9.88,
+                "end": 10.1,
+                "probability": 0.8013949394226074,
+                "tokens": [
+                    8067
+                ]
+            },
+            {
+                "word": " bear?",
+                "start": 10.1,
+                "end": 10.48,
+                "probability": 0.9858550429344177,
+                "tokens": [
+                    6155,
+                    30
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "start": 10.9,
+        "end": 11.28,
+        "text": " Yeah.",
+        "seek": 0.0,
+        "tokens": [
+            865,
+            13
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.40120403854935255,
+        "compression_ratio": 1.472,
+        "no_speech_prob": 0.02233218215405941,
+        "words": [
+            {
+                "word": " Yeah.",
+                "start": 10.9,
+                "end": 11.28,
+                "probability": 0.334746778011322,
+                "tokens": [
+                    865,
+                    13
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "start": 11.64,
+        "end": 12.54,
+        "text": " And the fresh strawberry?",
+        "seek": 0.0,
+        "tokens": [
+            400,
+            264,
+            4451,
+            20440,
+            30
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.40120403854935255,
+        "compression_ratio": 1.472,
+        "no_speech_prob": 0.02233218215405941,
+        "words": [
+            {
+                "word": " And",
+                "start": 11.64,
+                "end": 11.76,
+                "probability": 0.7629927396774292,
+                "tokens": [
+                    400
+                ]
+            },
+            {
+                "word": " the",
+                "start": 11.76,
+                "end": 11.84,
+                "probability": 0.982840895652771,
+                "tokens": [
+                    264
+                ]
+            },
+            {
+                "word": " fresh",
+                "start": 11.84,
+                "end": 12.12,
+                "probability": 0.9431042671203613,
+                "tokens": [
+                    4451
+                ]
+            },
+            {
+                "word": " strawberry?",
+                "start": 12.12,
+                "end": 12.54,
+                "probability": 0.5935729742050171,
+                "tokens": [
+                    20440,
+                    30
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "start": 13.26,
+        "end": 16.3,
+        "text": " Okay, maybe Emil can see the bear's birthday book now.",
+        "seek": 0.0,
+        "tokens": [
+            1033,
+            11,
+            1310,
+            36983,
+            393,
+            536,
+            264,
+            6155,
+            311,
+            6154,
+            1446,
+            586,
+            13
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.40120403854935255,
+        "compression_ratio": 1.472,
+        "no_speech_prob": 0.02233218215405941,
+        "words": [
+            {
+                "word": " Okay,",
+                "start": 13.26,
+                "end": 14.12,
+                "probability": 0.8154662847518921,
+                "tokens": [
+                    1033,
+                    11
+                ]
+            },
+            {
+                "word": " maybe",
+                "start": 14.44,
+                "end": 14.6,
+                "probability": 0.9932050704956055,
+                "tokens": [
+                    1310
+                ]
+            },
+            {
+                "word": " Emil",
+                "start": 14.6,
+                "end": 14.86,
+                "probability": 0.9128720164299011,
+                "tokens": [
+                    36983
+                ]
+            },
+            {
+                "word": " can",
+                "start": 14.86,
+                "end": 15.06,
+                "probability": 0.8476008176803589,
+                "tokens": [
+                    393
+                ]
+            },
+            {
+                "word": " see",
+                "start": 15.06,
+                "end": 15.32,
+                "probability": 0.9713956713676453,
+                "tokens": [
+                    536
+                ]
+            },
+            {
+                "word": " the",
+                "start": 15.32,
+                "end": 15.42,
+                "probability": 0.9929792284965515,
+                "tokens": [
+                    264
+                ]
+            },
+            {
+                "word": " bear's",
+                "start": 15.42,
+                "end": 15.68,
+                "probability": 0.9804797768592834,
+                "tokens": [
+                    6155,
+                    311
+                ]
+            },
+            {
+                "word": " birthday",
+                "start": 15.68,
+                "end": 15.9,
+                "probability": 0.9961736798286438,
+                "tokens": [
+                    6154
+                ]
+            },
+            {
+                "word": " book",
+                "start": 15.9,
+                "end": 16.18,
+                "probability": 0.9974992871284485,
+                "tokens": [
+                    1446
+                ]
+            },
+            {
+                "word": " now.",
+                "start": 16.18,
+                "end": 16.3,
+                "probability": 0.9811727404594421,
+                "tokens": [
+                    586,
+                    13
+                ]
+            }
+        ]
+    }
+]
